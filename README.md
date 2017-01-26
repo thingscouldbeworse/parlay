@@ -1,3 +1,3 @@
-#parlay
+#parley
 
 messenging app
