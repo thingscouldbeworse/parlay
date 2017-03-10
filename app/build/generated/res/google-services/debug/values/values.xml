@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">102389610320-gb0idd9umv6v3jfj2m8c8rsl2lr25651.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://parley-2dc67.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">102389610320</string>
+    <string name="google_api_key" translatable="false">AIzaSyABJ0PE9db7sDF2GLD-qJhbN-ho3kaI0Aw</string>
+    <string name="google_app_id" translatable="false">1:102389610320:android:4f4ec731e9bf7c1d</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyABJ0PE9db7sDF2GLD-qJhbN-ho3kaI0Aw</string>
+    <string name="google_storage_bucket" translatable="false">parley-2dc67.appspot.com</string>
+</resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "102389610320",
+    "firebase_url": "https://parley-2dc67.firebaseio.com",
+    "project_id": "parley-2dc67",
+    "storage_bucket": "parley-2dc67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102389610320:android:4f4ec731e9bf7c1d",
+        "android_client_info": {
+          "package_name": "com.parley.parley"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102389610320-gb0idd9umv6v3jfj2m8c8rsl2lr25651.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABJ0PE9db7sDF2GLD-qJhbN-ho3kaI0Aw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
