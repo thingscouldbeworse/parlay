@@ -1,98 +1,280 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:2:1-21:12
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:2:1-21:12
 	package
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:3:5-32
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:3:5-32
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:5:5-19:19
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\7716529729c5a0deb7031e785bd8491f51017295\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\09e3e6d5a1f6a4d9b4b694ec3cbc07ba578e3857\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\a219d25f7d01542f1eb8adb2d5c139f031d713ae\output\AndroidManifest.xml:23:5-20
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:5:5-19:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Princess Buttercup\.android\build-cache\3a0d0f1f831c421de777cc1b8d08737c792ced3b\output\AndroidManifest.xml:9:5-20
+MERGED from [com.firebaseui:firebase-ui-database:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\06a8645ca785fcf10435d4c5264bc5e59debb144\output\AndroidManifest.xml:13:5-17:19
+MERGED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:12:5-83:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.14.1] C:\Users\Princess Buttercup\.android\build-cache\d397eee108317138a5da587f872a07048d33a6e1\output\AndroidManifest.xml:28:5-37:19
+MERGED from [com.android.support:customtabs:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\9b20d7bec0b8afaac61b9db8e38f1d1b768a9817\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\b4a755314bcb6b5bc070703f9f0e594122dab657\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\8add0a203d43a67c82ed8f09bbbf0546ba3458cc\output\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\9ca29d174777ba15c1f5b86ade01154183eefd32\output\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-auth-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\913725d8aeb999199f956d5ebac7f987128f0f31\output\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:19:5-25:19
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\0f7e5cde54aa1ebef2daa04e06e2e8df41d59e9f\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\f5bc569c0924d16ef58fe40f6713cf56e1e41315\output\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\9570dd8b61e85ed54dedfc01b9bbf5a12143698c\output\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:palette-v7:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\891dffbd6e378e33d3f885ae1af472ffaa3155e2\output\AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.firebase:firebase-core:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\dc6c9260d9af6e2d75b446e5bbdca8b1ab8b8557\output\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\e86c5737add79311ce72f9b8f280d5ec4aad0dcf\output\AndroidManifest.xml:26:5-41:19
 MERGED from [com.google.firebase:firebase-analytics-impl:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\5975d57558cb1879cf195ad2cef477446c873e38\output\AndroidManifest.xml:26:5-41:19
-MERGED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\0562353c440738bdb281040563c3360059ae276a\output\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\fcdc12a1a5e3f36ce6634a1e3dee4c38103d4baa\output\AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.firebase:firebase-iid:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\015e7b87514c0a3265a1f0c4ee34a175e5a5f21c\output\AndroidManifest.xml:30:5-59:19
-MERGED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\a87b5932f441980a58471610da40ad2a946f88ab\output\AndroidManifest.xml:5:5-12:19
-MERGED from [com.google.android.gms:play-services-tasks:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\239fdf7a16cca05bd8245ca15cc675e62c23f510\output\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\5d30dd06c2c44e747164b7c71fb7b42c6467ee68\output\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\261838d61979d960a6aa77de92ebe825bc78b4bc\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\fb0e1578cf988e243b39ad06e7cf6515c0502089\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\d5ade78b6100ce4574b4bbe3a542699d2ba228b0\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\8560a06a2b14fc0c5c9abaecd8b9fd766c6d11da\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\d9587a18306ebbec2a2ca3235892248818ced013\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\3b265a0859981a28938c5b39d3111eb6de0cdfb0\output\AndroidManifest.xml:25:5-20
+MERGED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\c41c55c9a0756c2f8aa4de992d03a97f41dbc9ca\output\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\2e10cc7f0fb3b891ae3a0e77d6891ca7912ad809\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\28189f3c862e544a3f1831fe69249486e5075bc1\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:24.0.0] C:\Users\Princess Buttercup\.android\build-cache\39f9ac331255657ba997641904d7d9f4c8ebea42\output\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:8:9-41
 	android:supportsRtl
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:10:9-35
 	android:roundIcon
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:9:9-54
 	android:allowBackup
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:6:9-35
 	android:icon
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:7:9-43
 	android:theme
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:11:9-40
 activity#com.parley.parley.MainActivity
-ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:12:9-18:20
 	android:name
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:12:19-47
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:12:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:13:13-17:29
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:13:13-17:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:14:17-69
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:14:17-69
 	android:name
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:14:25-66
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:14:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:16:27-74
 uses-sdk
-INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\7716529729c5a0deb7031e785bd8491f51017295\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\09e3e6d5a1f6a4d9b4b694ec3cbc07ba578e3857\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\a219d25f7d01542f1eb8adb2d5c139f031d713ae\output\AndroidManifest.xml:21:5-43
+INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Princess Buttercup\.android\build-cache\3a0d0f1f831c421de777cc1b8d08737c792ced3b\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.firebaseui:firebase-ui:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\f99efafc839734c3aae783311ba9024cc7516c13\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.firebaseui:firebase-ui-database:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\06a8645ca785fcf10435d4c5264bc5e59debb144\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-database:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\5b18778d2f52c84960b0792472a42d4d8f504d49\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-database-connection:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\da9e23ba3f8591581c81a00d3f5a5e4b0fbd525a\output\AndroidManifest.xml:3:5-42
+MERGED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.14.1] C:\Users\Princess Buttercup\.android\build-cache\d397eee108317138a5da587f872a07048d33a6e1\output\AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:customtabs:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\9b20d7bec0b8afaac61b9db8e38f1d1b768a9817\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\b4a755314bcb6b5bc070703f9f0e594122dab657\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\8add0a203d43a67c82ed8f09bbbf0546ba3458cc\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\b13c186d878856a4ceb9c04045fec58d86936edd\output\AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\9ca29d174777ba15c1f5b86ade01154183eefd32\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-auth-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\913725d8aeb999199f956d5ebac7f987128f0f31\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-auth-module:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\0ba3119fef1b29921670061d41291596f206f6e5\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-auth-base:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\ed7554fae6e19252f2a9332a15a6344f5b494dd0\output\AndroidManifest.xml:4:5-42
+MERGED from [com.firebaseui:firebase-ui-storage:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\1eda0e01c5c8ef0f1ac3c06dc54b1e7a072fcf6f\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\0f7e5cde54aa1ebef2daa04e06e2e8df41d59e9f\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\f5bc569c0924d16ef58fe40f6713cf56e1e41315\output\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\9570dd8b61e85ed54dedfc01b9bbf5a12143698c\output\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:palette-v7:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\891dffbd6e378e33d3f885ae1af472ffaa3155e2\output\AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-storage:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\7fc30e916a750245e6ceabdf16367349e8eb9b0d\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\9a9802013f7c75e41edfb71b7927a763c606ee6b\output\AndroidManifest.xml:3:5-42
 MERGED from [com.google.firebase:firebase-core:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\dc6c9260d9af6e2d75b446e5bbdca8b1ab8b8557\output\AndroidManifest.xml:4:5-42
 MERGED from [com.google.firebase:firebase-analytics:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\e86c5737add79311ce72f9b8f280d5ec4aad0dcf\output\AndroidManifest.xml:18:5-42
 MERGED from [com.google.firebase:firebase-analytics-impl:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\5975d57558cb1879cf195ad2cef477446c873e38\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\0562353c440738bdb281040563c3360059ae276a\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\fcdc12a1a5e3f36ce6634a1e3dee4c38103d4baa\output\AndroidManifest.xml:17:5-42
 MERGED from [com.google.firebase:firebase-iid:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\015e7b87514c0a3265a1f0c4ee34a175e5a5f21c\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\a87b5932f441980a58471610da40ad2a946f88ab\output\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\239fdf7a16cca05bd8245ca15cc675e62c23f510\output\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\5d30dd06c2c44e747164b7c71fb7b42c6467ee68\output\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\261838d61979d960a6aa77de92ebe825bc78b4bc\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\fb0e1578cf988e243b39ad06e7cf6515c0502089\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\d5ade78b6100ce4574b4bbe3a542699d2ba228b0\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\8560a06a2b14fc0c5c9abaecd8b9fd766c6d11da\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\d9587a18306ebbec2a2ca3235892248818ced013\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\3b265a0859981a28938c5b39d3111eb6de0cdfb0\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\c41c55c9a0756c2f8aa4de992d03a97f41dbc9ca\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\2e10cc7f0fb3b891ae3a0e77d6891ca7912ad809\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\28189f3c862e544a3f1831fe69249486e5075bc1\output\AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:support-v4:24.0.0] C:\Users\Princess Buttercup\.android\build-cache\39f9ac331255657ba997641904d7d9f4c8ebea42\output\AndroidManifest.xml:21:5-23:54
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Princess Buttercup\.android\build-cache\7716529729c5a0deb7031e785bd8491f51017295\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Princess Buttercup\.android\build-cache\0f7e5cde54aa1ebef2daa04e06e2e8df41d59e9f\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Princess Buttercup\Documents\School\Parley\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from [com.google.firebase:firebase-analytics:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\e86c5737add79311ce72f9b8f280d5ec4aad0dcf\output\AndroidManifest.xml:21:5-67
+ADDED from [com.firebaseui:firebase-ui:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\f99efafc839734c3aae783311ba9024cc7516c13\output\AndroidManifest.xml:11:5-67
+MERGED from [com.firebaseui:firebase-ui-database:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\06a8645ca785fcf10435d4c5264bc5e59debb144\output\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\e86c5737add79311ce72f9b8f280d5ec4aad0dcf\output\AndroidManifest.xml:21:5-67
 MERGED from [com.google.firebase:firebase-analytics-impl:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\5975d57558cb1879cf195ad2cef477446c873e38\output\AndroidManifest.xml:21:5-67
 MERGED from [com.google.firebase:firebase-iid:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\015e7b87514c0a3265a1f0c4ee34a175e5a5f21c\output\AndroidManifest.xml:21:5-67
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\e86c5737add79311ce72f9b8f280d5ec4aad0dcf\output\AndroidManifest.xml:21:22-64
+		ADDED from [com.firebaseui:firebase-ui:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\f99efafc839734c3aae783311ba9024cc7516c13\output\AndroidManifest.xml:11:22-64
+meta-data#com.google.android.gms.version
+ADDED from [com.firebaseui:firebase-ui-database:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\06a8645ca785fcf10435d4c5264bc5e59debb144\output\AndroidManifest.xml:14:9-16:69
+MERGED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:13:9-15:69
+MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\28189f3c862e544a3f1831fe69249486e5075bc1\output\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.firebaseui:firebase-ui-database:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\06a8645ca785fcf10435d4c5264bc5e59debb144\output\AndroidManifest.xml:16:13-66
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-database:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\06a8645ca785fcf10435d4c5264bc5e59debb144\output\AndroidManifest.xml:15:13-58
+activity#com.firebase.ui.auth.ui.email.ConfirmRecoverPasswordActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:17:9-20:56
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:19:13-76
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:20:13-53
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:18:13-88
+activity#com.firebase.ui.auth.ui.email.EmailHintContainerActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:21:9-24:61
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:23:13-58
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:24:13-58
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:22:13-84
+activity#com.firebase.ui.auth.ui.email.RecoverPasswordActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:25:9-28:49
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:27:13-68
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:28:13-46
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:26:13-81
+activity#com.firebase.ui.auth.ui.email.RegisterEmailActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:29:9-32:49
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:31:13-66
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:32:13-46
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:30:13-79
+activity#com.firebase.ui.auth.ui.email.SignInNoPasswordActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:33:9-36:49
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:35:13-71
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:36:13-46
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:34:13-82
+activity#com.firebase.ui.auth.ui.email.SignInActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:37:9-40:49
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:39:13-59
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:40:13-46
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:38:13-72
+activity#com.firebase.ui.auth.ui.account_link.SaveCredentialsActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:41:9-44:61
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:43:13-58
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:44:13-58
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:42:13-88
+activity#com.firebase.ui.auth.ui.account_link.WelcomeBackIDPPrompt
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:45:9-48:49
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:47:13-66
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:48:13-46
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:46:13-85
+activity#com.firebase.ui.auth.ui.account_link.WelcomeBackPasswordPrompt
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:49:9-52:49
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:51:13-71
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:52:13-46
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:50:13-90
+activity#com.firebase.ui.auth.ui.idp.AuthMethodPickerActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:53:9-56:49
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:55:13-58
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:56:13-46
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:54:13-80
+activity#com.firebase.ui.auth.ui.idp.IDPSignInContainerActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:57:9-60:61
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:59:13-58
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:60:13-58
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:58:13-82
+activity#com.firebase.ui.auth.ui.ChooseAccountActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:61:9-64:61
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:63:13-58
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:64:13-58
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:62:13-73
+activity#com.facebook.FacebookActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:65:9-70:45
+MERGED from [com.facebook.android:facebook-android-sdk:4.14.1] C:\Users\Princess Buttercup\.android\build-cache\d397eee108317138a5da587f872a07048d33a6e1\output\AndroidManifest.xml:29:9-32:75
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:68:13-45
+	android:configChanges
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:67:13-96
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:69:13-58
+		REJECTED from [com.facebook.android:facebook-android-sdk:4.14.1] C:\Users\Princess Buttercup\.android\build-cache\d397eee108317138a5da587f872a07048d33a6e1\output\AndroidManifest.xml:32:13-72
+	tools:replace
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:70:13-42
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:66:13-57
+activity#com.facebook.CustomTabActivity
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:71:9-82:20
+MERGED from [com.facebook.android:facebook-android-sdk:4.14.1] C:\Users\Princess Buttercup\.android\build-cache\d397eee108317138a5da587f872a07048d33a6e1\output\AndroidManifest.xml:33:9-36:20
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:73:13-36
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:72:13-58
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:74:13-81:29
+action#android.intent.action.VIEW
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:75:17-69
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:75:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:77:17-76
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:77:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:78:17-78
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:78:27-75
+data
+ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:80:17-81
+	android:scheme
+		ADDED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:80:23-78
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:20:9-189
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:20:129-162
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:20:163-187
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:20:69-128
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:20:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:24:9-184
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:24:64-87
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:24:88-182
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\a71f3c978793ae867474b83db9a676637153c1e9\output\AndroidManifest.xml:24:18-63
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-analytics:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\e86c5737add79311ce72f9b8f280d5ec4aad0dcf\output\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-analytics-impl:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\5975d57558cb1879cf195ad2cef477446c873e38\output\AndroidManifest.xml:22:5-79
@@ -128,13 +310,13 @@ MERGED from [com.google.firebase:firebase-analytics-impl:9.0.0] C:\Users\Princes
 	android:name
 		ADDED from [com.google.firebase:firebase-analytics:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\e86c5737add79311ce72f9b8f280d5ec4aad0dcf\output\AndroidManifest.xml:37:11-82
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\0562353c440738bdb281040563c3360059ae276a\output\AndroidManifest.xml:20:9-22:45
+ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\fcdc12a1a5e3f36ce6634a1e3dee4c38103d4baa\output\AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\0562353c440738bdb281040563c3360059ae276a\output\AndroidManifest.xml:22:19-43
+		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\fcdc12a1a5e3f36ce6634a1e3dee4c38103d4baa\output\AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\0562353c440738bdb281040563c3360059ae276a\output\AndroidManifest.xml:21:19-78
+		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\fcdc12a1a5e3f36ce6634a1e3dee4c38103d4baa\output\AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\0562353c440738bdb281040563c3360059ae276a\output\AndroidManifest.xml:20:19-85
+		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\fcdc12a1a5e3f36ce6634a1e3dee4c38103d4baa\output\AndroidManifest.xml:19:19-85
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from [com.google.firebase:firebase-iid:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\015e7b87514c0a3265a1f0c4ee34a175e5a5f21c\output\AndroidManifest.xml:23:5-82
 	android:name
@@ -192,18 +374,12 @@ ADDED from [com.google.firebase:firebase-iid:9.0.0] C:\Users\Princess Buttercup\
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\015e7b87514c0a3265a1f0c4ee34a175e5a5f21c\output\AndroidManifest.xml:55:25-77
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\a87b5932f441980a58471610da40ad2a946f88ab\output\AndroidManifest.xml:7:9-11:39
+ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\c41c55c9a0756c2f8aa4de992d03a97f41dbc9ca\output\AndroidManifest.xml:6:9-175
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\a87b5932f441980a58471610da40ad2a946f88ab\output\AndroidManifest.xml:8:13-72
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\c41c55c9a0756c2f8aa4de992d03a97f41dbc9ca\output\AndroidManifest.xml:6:19-78
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\a87b5932f441980a58471610da40ad2a946f88ab\output\AndroidManifest.xml:10:13-37
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\c41c55c9a0756c2f8aa4de992d03a97f41dbc9ca\output\AndroidManifest.xml:6:125-149
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\a87b5932f441980a58471610da40ad2a946f88ab\output\AndroidManifest.xml:11:13-36
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\c41c55c9a0756c2f8aa4de992d03a97f41dbc9ca\output\AndroidManifest.xml:6:150-173
 	android:name
-		ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\a87b5932f441980a58471610da40ad2a946f88ab\output\AndroidManifest.xml:9:13-58
-meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\5d30dd06c2c44e747164b7c71fb7b42c6467ee68\output\AndroidManifest.xml:21:9-23:69
-	android:value
-		ADDED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\5d30dd06c2c44e747164b7c71fb7b42c6467ee68\output\AndroidManifest.xml:23:13-66
-	android:name
-		ADDED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Princess Buttercup\.android\build-cache\5d30dd06c2c44e747164b7c71fb7b42c6467ee68\output\AndroidManifest.xml:22:13-58
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Princess Buttercup\.android\build-cache\c41c55c9a0756c2f8aa4de992d03a97f41dbc9ca\output\AndroidManifest.xml:6:79-124
