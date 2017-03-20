@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,9 +36,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         //user sign in
-        if(FirebaseAuth.getInstance().getCurrentUser() == null) {
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             // Start sign in/sign up activity
             startActivityForResult(
                     AuthUI.getInstance()
@@ -60,30 +60,43 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    //to post new message by clicking on the FloatingActionButton
-    FloatingActionButton fab =
-            (FloatingActionButton)findViewById(R.id.fab);
+        //to post new message by clicking on the FloatingActionButton
+        FloatingActionButton fab =
+                (FloatingActionButton) findViewById(R.id.fab);
 
-fab.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view){
-            EditText input = (EditText) findViewById(R.id.input);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText input = (EditText) findViewById(R.id.input);
 
-            // Read the input field and push a new instance
-            // of com.parley.parley.ChatMessage to the Firebase database
-            FirebaseDatabase.getInstance()
-                    .getReference()
-                    .push()
-                    .setValue(new ChatMessage(input.getText().toString(),
-                            FirebaseAuth.getInstance()
-                                    .getCurrentUser()
-                                    .getDisplayName())
-                    );
+                // Read the input field and push a new instance
+                // of com.parley.parley.ChatMessage to the Firebase database
+                FirebaseDatabase.getInstance()
+                        .getReference()
+                        .push()
+                        .setValue(new ChatMessage(input.getText().toString(),
+                                FirebaseAuth.getInstance()
+                                        .getCurrentUser()
+                                        .getDisplayName())
+                        );
 
-            // Clear the input
-            input.setText("");
-        }
+                // Clear the input
+                input.setText("");
+            }
         });
+
+
+//opens up the settings activity page if settingsButton is clicked
+        ImageButton setting = (ImageButton) findViewById(R.id.settingsButton);
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(MainActivity.this, Settings.class));
+            }
+        });
+
     }
 
     //displays the messages
@@ -165,4 +178,5 @@ public boolean onOptionsItemSelected(MenuItem item) {
                 });
     }
     return true;
-}}
+}
+}

@@ -3,7 +3,7 @@ package com.parley.parley;
 import java.util.Date;
 
 /**
- * Created by Tricia Price on 3/16/2017.
+ * Created by Tricia Sallee on 3/16/2017.
  */
 
 public class ChatMessage {
