@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Parley</string>
+
+    <string-array name="background">
+        <item>White (default)</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Purple</item>
+        <item>Red</item>
+        <item>Brown</item>
+        <item>Black</item>
+    </string-array>
+
+    <string name="background_prompt">Choose Background Color</string>
+    <string name="font_button">Customize Font</string>
+    <string name="circle">Circle</string>
+    <string name="hexagon">Hexagon</string>
+    <string name="quote">Quote Bubble</string>
+    <string name="triangle">Triangle</string>
+    <string name="star">Star</string>
+    <string name="textBubbleShape">Text Bubble Shape</string>
+    <string name="notificationSetting">Notification Settings</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="ringtone">Ringtone</string>
+    <string name="light">Light</string>
+
 </resources>
