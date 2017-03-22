@@ -14,7 +14,9 @@
         android:text="@string/background_prompt"
         android:textSize="12sp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <Spinner
         android:id="@+id/background_color"
@@ -25,7 +27,9 @@
         android:visibility="visible"
         android:prompt="@string/background_prompt"
         android:layout_below="@id/editText3"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        app:layout_constraintBottom_toBottomOf="@id/editText3"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <Button
         android:id="@+id/button2"
@@ -34,7 +38,11 @@
         android:text="@string/font_button"
         android:layout_toEndOf="@id/background_color"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="206dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/editText"
@@ -44,7 +52,9 @@
         android:text="@string/textBubbleShape"
         android:textSize="12sp"
         android:layout_below="@id/background_color"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/background_color"/>
 
     <TextView
         android:id="@+id/editText2"
@@ -52,14 +62,63 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="@string/notificationSetting"
-        android:layout_below="@id/button2" />
+        android:layout_below="@id/button2"
+        tools:layout_editor_absoluteY="326dp"
+        tools:layout_editor_absoluteX="220dp" />
 
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vibrate"
+        android:layout_below="@id/editText2"/>
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ringtone"
+        android:layout_below="@id/checkBox"/>
+
+    <Spinner
+        android:id="@+id/ringtoneChooser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:visibility="visible"
+        android:layout_below="@id/checkBox2">
+        </Spinner>
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/light"
+        android:layout_below="@id/ringtoneChooser"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <Spinner
+        android:id="@+id/lightChooser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:visibility="visible"
+        android:layout_below="@id/checkBox3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </Spinner>
 
     <RadioGroup
         android:layout_width="181dp"
         android:layout_height="224dp"
+        android:id="@+id/radioButtons"
         android:layout_below="@id/background_color"
-        >
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="259dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <RadioButton
             android:id="@+id/radioButton3"
@@ -125,7 +184,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/quote" />
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
@@ -136,44 +194,5 @@
 
     </RadioGroup>
 
-    <ListView
-        android:layout_width="176dp"
-        android:layout_height="220dp"
-        android:layout_below="@id/editText2" >
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/vibrate" />
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ringtone" />
-
-        <Spinner
-            android:id="@+id/ringtoneChooser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dialog"
-            android:visibility="visible"
-            >
-        </Spinner>
-
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/light"/>
-
-        <Spinner
-            android:id="@+id/lightChooser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dialog"
-            android:visibility="visible"></Spinner>
-    </ListView>
 
 </android.support.constraint.ConstraintLayout>
