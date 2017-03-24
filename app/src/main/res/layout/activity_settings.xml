@@ -51,6 +51,7 @@
         android:layout_toEndOf="@id/background_color"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,6 +71,7 @@
         android:layout_below="@id/background_color"
         android:ems="10"
         android:text="@string/textBubbleShape"
+
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Small"
         android:textStyle="bold"
@@ -178,6 +180,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="181dp"
         android:layout_height="224dp"
+        android:id="@+id/radioButtons"
         android:layout_below="@id/background_color"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -251,7 +254,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/quote" />
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"

@@ -108,21 +108,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
-                TextView messageText = (TextView)v.findViewById(R.id.message_text);
-                TextView messageUser = (TextView)v.findViewById(R.id.message_user);
-                TextView messageTime = (TextView)v.findViewById(R.id.message_time);
+                TextView messageText = (TextView) v.findViewById(R.id.message_text);
+                TextView messageUser = (TextView) v.findViewById(R.id.message_user);
+                TextView messageTime = (TextView) v.findViewById(R.id.message_time);
 
-                // Set their text
+                //test the message text to ensure it is not a blank message
+                //String message;
+                //message = model.getMessageText();
+
+                //if ((message != null) && (!message.isEmpty())){
+                // Set their text if the message is not blank
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
 
                 // Format the date before showing it
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
                         model.getMessageTime()));
-            }
-        };
 
-        listOfMessages.setAdapter(adapter);
+            }};
+                listOfMessages.setAdapter(adapter);
+
+
+
     }
 
 
