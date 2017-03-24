@@ -180,7 +180,6 @@
         android:id="@+id/radioGroup"
         android:layout_width="181dp"
         android:layout_height="224dp"
-        android:id="@+id/radioButtons"
         android:layout_below="@id/background_color"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
