@@ -1,9 +1,11 @@
 package com.parley.parley;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -11,6 +13,8 @@ import android.text.format.DateUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -23,17 +27,26 @@ import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import static com.parley.parley.R.id.parent;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int SIGN_IN_REQUEST_CODE = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         //user sign in
@@ -58,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             // Load chat room contents
             displayChatMessages();
         }
+
+
 
 
         //to post new message by clicking on the FloatingActionButton
@@ -99,9 +114,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //allow user to delete messages on device
+    //@Override
+   // protected void onListItemClick(ListView clicked, View view, int position, long id){
+        //ChatMessage deletedMessage;
+        //deletedMessage = getListView().
+    //}
+
     //displays the messages
     private void displayChatMessages() {
         ListView listOfMessages = (ListView)findViewById(R.id.list_of_messages);
+        listOfMessages.setClickable(true);
+
 
         adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
                 R.layout.message, FirebaseDatabase.getInstance().getReference()) {
@@ -128,9 +152,22 @@ public class MainActivity extends AppCompatActivity {
             }};
                 listOfMessages.setAdapter(adapter);
 
+        //allow user to delete all messages on device and in Firebase database
+        listOfMessages.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position,
+                                           long id) {
+
+                DatabaseReference delete = FirebaseDatabase.getInstance().getReference();
+                delete.removeValue();
 
 
-    }
+                return true;
+               }
+            });
+
+
+        }
 
 
 //once user has signed in
@@ -162,9 +199,11 @@ protected void onActivityResult(int requestCode, int resultCode,
 //to instantiate menu resource
 @Override
 public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-        }
+    getMenuInflater().inflate(R.menu.main_menu, menu);
+    return true;
+}
+
+
 
 //handle click events on menu
 @Override
