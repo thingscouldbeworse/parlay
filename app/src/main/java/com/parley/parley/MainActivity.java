@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//opens up the settings activity page if settingsButton is clicked
+        // opens up the settings activity page if settingsButton is clicked
         ImageButton setting = (ImageButton) findViewById(R.id.settingsButton);
 
         setting.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +109,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 startActivity(new Intent(MainActivity.this, Settings.class));
+            }
+        });
+
+        // clickable ConversationList button
+        ImageButton convoList = (ImageButton) findViewById(R.id.convoListButton);
+
+        convoList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ConversationList.class));
             }
         });
 
@@ -122,15 +132,18 @@ public class MainActivity extends AppCompatActivity {
     //}
 
     //displays the messages
-    private void displayChatMessages() {
+    private void displayChatMessages()
+    {
         ListView listOfMessages = (ListView)findViewById(R.id.list_of_messages);
         listOfMessages.setClickable(true);
 
 
         adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
-                R.layout.message, FirebaseDatabase.getInstance().getReference()) {
+                R.layout.message, FirebaseDatabase.getInstance().getReference())
+        {
             @Override
-            protected void populateView(View v, ChatMessage model, int position) {
+            protected void populateView(View v, ChatMessage model, int position)
+            {
                 // Get references to the views of message.xml
                 TextView messageText = (TextView) v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView) v.findViewById(R.id.message_user);
@@ -149,8 +162,10 @@ public class MainActivity extends AppCompatActivity {
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
                         model.getMessageTime()));
 
-            }};
-                listOfMessages.setAdapter(adapter);
+            }
+        };
+
+        listOfMessages.setAdapter(adapter);
 
         //allow user to delete all messages on device and in Firebase database
         listOfMessages.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -158,16 +173,16 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position,
                                            long id) {
 
-                DatabaseReference delete = FirebaseDatabase.getInstance().getReference();
-                delete.removeValue();
+            DatabaseReference delete = FirebaseDatabase.getInstance().getReference();
+            delete.removeValue();
 
 
-                return true;
-               }
-            });
+            return true;
+           }
+        });
 
 
-        }
+    }
 
 
 //once user has signed in
