@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:2:1-22:12
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:2:1-23:12
 	package
 		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:3:5-32
 		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\
 		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:5:5-20:19
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:5:5-21:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Princess Buttercup\.android\build-cache\3a0d0f1f831c421de777cc1b8d08737c792ced3b\output\AndroidManifest.xml:9:5-20
 MERGED from [com.firebaseui:firebase-ui-database:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\06a8645ca785fcf10435d4c5264bc5e59debb144\output\AndroidManifest.xml:13:5-17:19
 MERGED from [com.firebaseui:firebase-ui-auth:0.6.0] C:\Users\Princess Buttercup\.android\build-cache\199ae86243ec7a599c08b6eb67b0c7a8fc229302\output\AndroidManifest.xml:12:5-83:19
@@ -65,9 +65,13 @@ ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\
 	android:name
 		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:16:27-74
 activity#com.parley.parley.Settings
-ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:19:9-55
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:19:9-46
 	android:name
 		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:19:19-43
+activity#com.parley.parley.FontSettingsActivity
+ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:20:9-67
+	android:name
+		ADDED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml:20:19-55
 uses-sdk
 INJECTED from C:\Users\Princess Buttercup\Documents\School\git repo\parley\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Princess Buttercup\.android\build-cache\3a0d0f1f831c421de777cc1b8d08737c792ced3b\output\AndroidManifest.xml:5:5-7:41

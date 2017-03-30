@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.parley.parley.FontSettingsActivity">
+
+    <TextView
+        android:id="@+id/font_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="58dp"
+        android:text="@string/size"
+        android:textSize="20sp"
+        android:layout_alignStart="@+id/font_size_numbers" />
+
+    <Spinner
+        android:id="@+id/font_size_numbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/font_size"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="11dp"
+        android:entries="@array/fontSizes"/>
+
+    <CheckBox
+        android:id="@+id/bold_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bold"
+        android:layout_alignTop="@+id/font_size"
+        android:layout_alignStart="@+id/style_font" />
+
+    <CheckBox
+        android:id="@+id/italic_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/italic"
+        android:layout_below="@+id/bold_font"
+        android:layout_alignStart="@+id/style_font" />
+
+    <TextView
+        android:id="@+id/color_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/font_size_numbers"
+        android:layout_below="@+id/italic_font"
+        android:layout_marginTop="128dp"
+        android:text="@string/color"
+        android:textSize="20sp"/>
+
+    <Spinner
+        android:id="@+id/color_font_chooser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/color_font"
+        android:layout_alignStart="@+id/color_font" />
+
+    <TextView
+        android:id="@+id/style_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/style"
+        android:textSize="20sp"
+        android:layout_alignBaseline="@+id/color_font"
+        android:layout_alignBottom="@+id/color_font"
+        android:layout_toEndOf="@+id/font_size_numbers"
+        android:layout_marginStart="60dp" />
+
+    <Spinner
+        android:id="@+id/style_font_chooser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/style_font"
+        android:layout_alignTop="@+id/color_font_chooser" />
+
+</RelativeLayout>
