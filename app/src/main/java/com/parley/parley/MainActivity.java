@@ -38,7 +38,7 @@ import static com.parley.parley.R.id.parent;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int SIGN_IN_REQUEST_CODE = 1;
+    private static final int SIGN_IN_REQUEST = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
 
 
@@ -53,20 +53,13 @@ public class MainActivity extends AppCompatActivity {
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             // Start sign in/sign up activity
             startActivityForResult(
-                    AuthUI.getInstance()
-                            .createSignInIntentBuilder()
-                            .build(),
-                    SIGN_IN_REQUEST_CODE
+                    AuthUI.getInstance().createSignInIntentBuilder().build(),
+                    SIGN_IN_REQUEST
             );
         } else {
-            // User is already signed in. Therefore, display
-            // a welcome Toast
-            Toast.makeText(this,
-                    "Welcome " + FirebaseAuth.getInstance()
-                            .getCurrentUser()
-                            .getDisplayName(),
-                    Toast.LENGTH_LONG)
-                    .show();
+            // User is already signed in displays the welcome Toast
+            Toast.makeText(this, "Welcome to Parley " + FirebaseAuth.getInstance()
+                    .getCurrentUser().getDisplayName(), Toast.LENGTH_LONG).show();
 
             // Load chat room contents
             displayChatMessages();
@@ -75,28 +68,24 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //to post new message by clicking on the FloatingActionButton
-        FloatingActionButton fab =
-                (FloatingActionButton) findViewById(R.id.fab);
+        //to post new message by clicking on the send button
+        FloatingActionButton send =
+                (FloatingActionButton) findViewById(R.id.send);
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText input = (EditText) findViewById(R.id.input);
+                EditText message = (EditText) findViewById(R.id.message);
 
                 // Read the input field and push a new instance
                 // of com.parley.parley.ChatMessage to the Firebase database
-                FirebaseDatabase.getInstance()
-                        .getReference()
-                        .push()
-                        .setValue(new ChatMessage(input.getText().toString(),
-                                FirebaseAuth.getInstance()
-                                        .getCurrentUser()
-                                        .getDisplayName())
+                FirebaseDatabase.getInstance().getReference().push()
+                        .setValue(new ChatMessage(message.getText().toString(),
+                                FirebaseAuth.getInstance().getCurrentUser().getDisplayName())
                         );
 
                 // Clear the input
-                input.setText("");
+                message.setText("");
             }
         });
 
@@ -116,113 +105,110 @@ public class MainActivity extends AppCompatActivity {
 
     //allow user to delete messages on device
     //@Override
-   // protected void onListItemClick(ListView clicked, View view, int position, long id){
-        //ChatMessage deletedMessage;
-        //deletedMessage = getListView().
+    // protected void onListItemClick(ListView clicked, View view, int position, long id){
+    //ChatMessage deletedMessage;
+    //deletedMessage = getListView().
     //}
 
     //displays the messages
     private void displayChatMessages() {
-        ListView listOfMessages = (ListView)findViewById(R.id.list_of_messages);
-        listOfMessages.setClickable(true);
-
+        ListView chatMessages = (ListView)findViewById(R.id.chat_messages);
+        //allows each individual message to be clicked
+        chatMessages.setClickable(true);
 
         adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
                 R.layout.message, FirebaseDatabase.getInstance().getReference()) {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
-                TextView messageText = (TextView) v.findViewById(R.id.message_text);
-                TextView messageUser = (TextView) v.findViewById(R.id.message_user);
-                TextView messageTime = (TextView) v.findViewById(R.id.message_time);
+                TextView messText = (TextView) v.findViewById(R.id.mess_text);
+                TextView messUser = (TextView) v.findViewById(R.id.mess_user);
+                TextView messTime = (TextView) v.findViewById(R.id.mess_time);
 
                 //test the message text to ensure it is not a blank message
                 //String message;
                 //message = model.getMessageText();
 
                 //if ((message != null) && (!message.isEmpty())){
-                // Set their text if the message is not blank
-                messageText.setText(model.getMessageText());
-                messageUser.setText(model.getMessageUser());
+
+                // Set their text to the message
+                messText.setText(model.getMessText());
+                messUser.setText(model.getMessUser());
 
                 // Format the date before showing it
-                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
-                        model.getMessageTime()));
+                messTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
+                        model.getMessTime()));
 
             }};
-                listOfMessages.setAdapter(adapter);
+        chatMessages.setAdapter(adapter);
 
         //allow user to delete all messages on device and in Firebase database
-        listOfMessages.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        chatMessages.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position,
                                            long id) {
 
                 DatabaseReference delete = FirebaseDatabase.getInstance().getReference();
                 delete.removeValue();
-
-
                 return true;
-               }
-            });
-
-
-        }
-
-
-//once user has signed in
-@Override
-protected void onActivityResult(int requestCode, int resultCode,
-                                Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-
-    if(requestCode == SIGN_IN_REQUEST_CODE) {
-        if(resultCode == RESULT_OK) {
-            Toast.makeText(this,
-                    "Successfully signed in. Welcome!",
-                    Toast.LENGTH_LONG)
-                    .show();
-            displayChatMessages();
-        } else {
-            Toast.makeText(this,
-                    "We couldn't sign you in. Please try again later.",
-                    Toast.LENGTH_LONG)
-                    .show();
-
-            // Close the app
-            finish();
-        }
+            }
+        });
     }
 
-}
 
-//to instantiate menu resource
-@Override
-public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.main_menu, menu);
-    return true;
-}
+    //once user has signed in
+    @Override
+    protected void onActivityResult(int request, int result, Intent data) {
 
+        super.onActivityResult(request, result, data);
 
+        //Display welcome toast if succesful sign in and load the chat messages
+        if(request == SIGN_IN_REQUEST) {
+            if(result == RESULT_OK) {
+                Toast.makeText(this, "Successfully signed in. Welcome to Parley!",
+                        Toast.LENGTH_LONG).show();
 
-//handle click events on menu
-@Override
-public boolean onOptionsItemSelected(MenuItem item) {
-    if(item.getItemId() == R.id.menu_sign_out) {
-        AuthUI.getInstance().signOut(this)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(MainActivity.this,
-                                "You have been signed out.",
-                                Toast.LENGTH_LONG)
-                                .show();
+                //load the Chat Messages
+                displayChatMessages();
 
-                        // Close activity
-                        finish();
-                    }
-                });
+                //Display error message if unsuccesful sign in
+            } else {
+                Toast.makeText(this,
+                        "Sorry. We couldn't sign you into Parley. Please try again later.",
+                        Toast.LENGTH_LONG).show();
+
+                // Close the app
+                finish();
+            }
+        }
+
     }
-    return true;
-}
+
+    //to instantiate menu resource
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+
+
+    //handle click events on menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.sign_out) {
+            AuthUI.getInstance().signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(MainActivity.this, "You have signed out of Parley.",
+                                    Toast.LENGTH_LONG).show();
+
+                            // Close activity
+                            finish();
+                        }
+                    });
+        }
+        return true;
+    }
 }

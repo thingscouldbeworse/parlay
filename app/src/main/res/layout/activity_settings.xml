@@ -7,7 +7,7 @@
     tools:context="com.parley.parley.Settings">
 
     <TextView
-        android:id="@+id/editText3"
+        android:id="@+id/choose_background_color"
         android:layout_width="178dp"
         android:layout_height="20dp"
         android:layout_alignParentStart="true"
@@ -33,7 +33,7 @@
         android:spinnerMode="dialog"
         android:visibility="visible"
         android:prompt="@string/background_prompt"
-        android:layout_below="@id/editText3"
+        android:layout_below="@id/choose_background_color"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -44,14 +44,13 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/customize_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/font_button"
         android:layout_toEndOf="@id/background_color"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,14 +63,13 @@
         app:layout_constraintHorizontal_bias="0.75" />
 
     <TextView
-        android:id="@+id/editText"
+        android:id="@+id/text_bubble_shape"
         android:layout_width="138dp"
         android:layout_height="18dp"
         android:layout_alignParentStart="true"
         android:layout_below="@id/background_color"
         android:ems="10"
         android:text="@string/textBubbleShape"
-
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Small"
         android:textStyle="bold"
@@ -86,12 +84,12 @@
         app:layout_constraintVertical_bias="0.937" />
 
     <TextView
-        android:id="@+id/editText2"
+        android:id="@+id/notification_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="@string/notificationSetting"
-        android:layout_below="@id/button2"
+        android:layout_below="@id/customize_font"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
@@ -100,12 +98,12 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
         app:layout_constraintHorizontal_bias="0.502"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox3"
+        app:layout_constraintBottom_toTopOf="@+id/light"
         app:layout_constraintVertical_bias="0.652" />
 
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/vibrate"
         android:layout_width="94dp"
         android:layout_height="33dp"
         android:text="@string/vibrate"
@@ -114,11 +112,11 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintTop_toTopOf="@+id/checkBox3"
+        app:layout_constraintTop_toTopOf="@+id/light"
         android:layout_marginTop="0dp" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/ringtone"
         android:layout_width="101dp"
         android:layout_height="33dp"
         android:text="@string/ringtone"
@@ -127,7 +125,7 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.97"
-        app:layout_constraintTop_toTopOf="@+id/checkBox3"
+        app:layout_constraintTop_toTopOf="@+id/light"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/ringtoneChooser"
@@ -142,9 +140,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="@+id/checkBox2"
+        app:layout_constraintRight_toRightOf="@+id/ringtone"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/checkBox2"
+        app:layout_constraintLeft_toLeftOf="@+id/ringtone"
         app:layout_constraintTop_toTopOf="@+id/lightChooser"
         android:layout_marginTop="8dp"
         app:layout_constraintHorizontal_bias="0.513"
@@ -152,7 +150,7 @@
     </Spinner>
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/light"
         android:layout_width="70dp"
         android:layout_height="33dp"
         android:text="@string/light"
@@ -190,14 +188,14 @@
         android:layout_marginBottom="190dp">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/circle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/circle" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/circle_picture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -205,42 +203,42 @@
             app:srcCompat="@drawable/circle" />
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/star" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/star_picture"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:contentDescription="@string/star"
             app:srcCompat="@drawable/star" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/triangle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/triangle" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/triangle_picture"
             android:layout_width="48dp"
             android:layout_height="17dp"
             android:contentDescription="@string/triangle"
             app:srcCompat="@drawable/triangle" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/hexagon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/hexagon" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/hexagonPicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -248,13 +246,13 @@
             app:srcCompat="@drawable/hexagon" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/quote_bubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/quote" />
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/quote_bubble_picture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
