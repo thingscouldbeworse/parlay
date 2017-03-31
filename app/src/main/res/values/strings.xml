@@ -25,6 +25,16 @@
     <string name="vibrate">Vibrate</string>
     <string name="ringtone">Ringtone</string>
     <string name="light">Light</string>
+    <string-array name="light">
+        <item>White (default)</item>
+        <item>Green</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Pink</item>
+        <item>Blue</item>
+        <item>Purple</item>
+        <item>Cyan</item>
+    </string-array>
     <string name="title_activity_font_settings">FontSettings</string>
 
     <!-- Strings used by activity_font_settings -->
