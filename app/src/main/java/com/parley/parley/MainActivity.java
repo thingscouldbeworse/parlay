@@ -34,20 +34,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import static com.parley.parley.R.id.parent;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int SIGN_IN_REQUEST = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
+    private DatabaseReference parley = FirebaseDatabase.getInstance().getReference();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         //user sign in
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
@@ -79,9 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // Read the input field and push a new instance
                 // of com.parley.parley.ChatMessage to the Firebase database
-                FirebaseDatabase.getInstance().getReference().push()
-                        .setValue(new ChatMessage(message.getText().toString(),
-                                FirebaseAuth.getInstance().getCurrentUser().getDisplayName())
+                parley.child("messages").push().setValue(new ChatMessage(message.getText()
+                        .toString(), FirebaseAuth.getInstance().getCurrentUser().getDisplayName())
                         );
 
                 // Clear the input
@@ -105,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
     //allow user to delete messages on device
     //@Override
-    // protected void onListItemClick(ListView clicked, View view, int position, long id){
+    // protected void onListItemClick(ListView clicked, View view, int position, long id){a
     //ChatMessage deletedMessage;
     //deletedMessage = getListView().
     //}
@@ -117,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         chatMessages.setClickable(true);
 
         adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
-                R.layout.message, FirebaseDatabase.getInstance().getReference()) {
+                R.layout.message, parley.child("messages")) {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
@@ -148,8 +151,12 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position,
                                            long id) {
 
-                DatabaseReference delete = FirebaseDatabase.getInstance().getReference();
-                delete.removeValue();
+                String key = parley.getKey();
+                String empty = "";
+                parley.removeValue();
+                Map<String, Object> childUpdates = new HashMap<>();
+                //childUpdates.put(key);
+                //parley.updateChildren(childUpdates);
                 return true;
             }
         });
