@@ -39,6 +39,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.content.DialogInterface.BUTTON_NEGATIVE;
+import static android.content.DialogInterface.BUTTON_POSITIVE;
 import static com.parley.parley.R.id.parent;
 
 public class MainActivity extends AppCompatActivity {
@@ -70,8 +72,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
-
         //to post new message by clicking on the send button
         FloatingActionButton send =
                 (FloatingActionButton) findViewById(R.id.send);
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 // of com.parley.parley.ChatMessage to the Firebase database
                 parley.child("messages").push().setValue(new ChatMessage(message.getText()
                         .toString(), FirebaseAuth.getInstance().getCurrentUser().getDisplayName())
-                        );
+                );
 
                 // Clear the input
                 message.setText("");
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//opens up the settings activity page if settingsButton is clicked
+        //opens up the settings activity page if settingsButton is clicked
         ImageButton setting = (ImageButton) findViewById(R.id.settingsButton);
 
         setting.setOnClickListener(new View.OnClickListener() {
@@ -104,14 +104,62 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //opens up menu if the menu button is selected to allow the user to logout or delete all messages
+        //in the database
+
+        ImageButton menuButton = (ImageButton) findViewById(R.id.menuButton);
+
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //shows the menu options
+
+
+                final AlertDialog.Builder menuBuild = new AlertDialog.Builder(MainActivity.this);
+                menuBuild.setTitle("MENU");
+
+                //creates the listener if the user presses the sign out button
+                menuBuild.setNegativeButton(R.string.sign_out_caps, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        AuthUI.getInstance().signOut(MainActivity.this).addOnCompleteListener(new
+                        OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(MainActivity.this, "You have signed out of Parley.",
+                            Toast.LENGTH_LONG).show();
+                                                                                                          }
+                                                                                                      });
+                        finish();
+                    }
+                });
+
+                //creates the listener if the user presses the delete all button
+                menuBuild.setPositiveButton(R.string.delete_all_caps, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        parley.removeValue();
+                        dialog.dismiss();
+                    }
+                });
+
+                //creates the listener if the user presses the cancel button
+                menuBuild.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+
+                menuBuild.create();
+                menuBuild.show();
+                //allow user to delete messages on device
+                //@Override
+                // protected void onListItemClick(ListView clicked, View view, int position, long id){a
+                //ChatMessage deletedMessage;
+                //deletedMessage = getListView().
+
+            }
+        });
     }
 
-    //allow user to delete messages on device
-    //@Override
-    // protected void onListItemClick(ListView clicked, View view, int position, long id){a
-    //ChatMessage deletedMessage;
-    //deletedMessage = getListView().
-    //}
 
     //displays the messages
     private void displayChatMessages() {
@@ -150,10 +198,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position,
                                            long id) {
+                parley.removeValue();
 
+                //Query the database to be able to retrieve the info from the selected message
+                //parley.addValueEventListener(new ValueEventListener(){
+                  //  @Override
+                  //  public void onDataChange(DataSnapshot data){
+
+  //                  }
+//                })
                 String key = parley.getKey();
                 String empty = "";
-                parley.removeValue();
                 Map<String, Object> childUpdates = new HashMap<>();
                 //childUpdates.put(key);
                 //parley.updateChildren(childUpdates);
