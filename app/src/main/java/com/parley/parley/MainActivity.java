@@ -1,7 +1,11 @@
 package com.parley.parley;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,19 +45,25 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+
 import static com.parley.parley.R.id.parent;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int SIGN_IN_REQUEST = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
+
+    private static final String TAG = "DeviceGroupCreation";
     private DatabaseReference parley = FirebaseDatabase.getInstance().getReference();
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Context context = this;
 
         //user sign in
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
@@ -60,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
                     AuthUI.getInstance().createSignInIntentBuilder().build(),
                     SIGN_IN_REQUEST
             );
+            idTask task = new idTask();
+            task.setContext(context);
+            task.setAccountName(getAccountName());
+            task.execute();
+
+
         } else {
             // User is already signed in displays the welcome Toast
             Toast.makeText(this, "Welcome to Parley " + FirebaseAuth.getInstance()
@@ -93,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//opens up the settings activity page if settingsButton is clicked
+        // opens up the settings activity page if settingsButton is clicked
         ImageButton setting = (ImageButton) findViewById(R.id.settingsButton);
 
         setting.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +119,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 startActivity(new Intent(MainActivity.this, Settings.class));
+            }
+        });
+
+        // clickable ConversationList button
+        ImageButton convoList = (ImageButton) findViewById(R.id.convoListButton);
+
+        convoList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ConversationList.class));
             }
         });
 
@@ -114,15 +142,20 @@ public class MainActivity extends AppCompatActivity {
     //}
 
     //displays the messages
-    private void displayChatMessages() {
-        ListView chatMessages = (ListView)findViewById(R.id.chat_messages);
-        //allows each individual message to be clicked
+
+    private void displayChatMessages()
+    {
+        ListView chatMessages = (ListView)findViewById(R.id.list_of_messages);
+
         chatMessages.setClickable(true);
 
         adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
-                R.layout.message, parley.child("messages")) {
+                R.layout.message, FirebaseDatabase.getInstance().getReference())
+        {
+
             @Override
-            protected void populateView(View v, ChatMessage model, int position) {
+            protected void populateView(View v, ChatMessage model, int position)
+            {
                 // Get references to the views of message.xml
                 TextView messText = (TextView) v.findViewById(R.id.mess_text);
                 TextView messUser = (TextView) v.findViewById(R.id.mess_user);
@@ -142,14 +175,22 @@ public class MainActivity extends AppCompatActivity {
                 messTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
                         model.getMessTime()));
 
-            }};
+
+            }
+        };
+
         chatMessages.setAdapter(adapter);
+
 
         //allow user to delete all messages on device and in Firebase database
         chatMessages.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position,
                                            long id) {
+
+
+            DatabaseReference delete = FirebaseDatabase.getInstance().getReference();
+            delete.removeValue();
 
                 String key = parley.getKey();
                 String empty = "";
@@ -162,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    }
 
     //once user has signed in
     @Override
