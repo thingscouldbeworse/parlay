@@ -6,46 +6,35 @@ import java.util.Date;
  * Created by Tricia Sallee on 3/16/2017.
  */
 
+
 public class ChatMessage {
 
-    private String messageText;
-    private String messageUser;
-    private long messageTime;
+    private String messText;
+    private String messUser;
+    private long messTime;
 
-    public ChatMessage(String messageText, String messageUser) {
-        this.messageText = messageText;
-        this.messageUser = messageUser;
+    public ChatMessage(String messText, String messUser) {
+        this.messText = messText;
+        this.messUser = messUser;
 
         // Initialize to current time
-        messageTime = new Date().getTime();
+        messTime = new Date().getTime();
     }
 
     public ChatMessage(){
 
     }
 
-    public String getMessageText() {
-        return messageText;
+    public String getMessText() {
+        return messText;
     }
 
-    public void setMessageText(String messageText) {
-        this.messageText = messageText;
+    public String getMessUser() {
+        return messUser;
     }
 
-    public String getMessageUser() {
-        return messageUser;
-    }
-
-    public void setMessageUser(String messageUser) {
-        this.messageUser = messageUser;
-    }
-
-    public long getMessageTime() {
-        return messageTime;
-    }
-
-    public void setMessageTime(long messageTime) {
-        this.messageTime = messageTime;
+    public long getMessTime() {
+        return messTime;
     }
 
 }
