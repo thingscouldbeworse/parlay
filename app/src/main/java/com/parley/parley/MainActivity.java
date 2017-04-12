@@ -5,6 +5,7 @@ import android.accounts.AccountManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -38,7 +39,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import android.content.Context;
 
 
 import static com.parley.parley.R.id.parent;
@@ -48,14 +48,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int SIGN_IN_REQUEST_CODE = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
     private static final String TAG = "DeviceGroupCreation";
-
-    public String getDisplayName() {
-
-        return FirebaseAuth.getInstance()
-                .getCurrentUser()
-                .getDisplayName();
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,17 +64,11 @@ public class MainActivity extends AppCompatActivity {
                             .build(),
                     SIGN_IN_REQUEST_CODE
             );
-            String accountName = getDisplayName();
+            idTask task = new idTask();
+            task.setContext(context);
+            task.setAccountName(getAccountName());
+            task.execute();
 
-            // Initialize the scope in order to create device group
-            final String scope = "audience:server:client_id:"
-                    + "102389610320-s4k60hkvcego5qd42pmqnvm0vf2fe95k.apps.googleusercontent.com";
-            String idToken = null;
-            try {
-                idToken = GoogleAuthUtil.getToken(context, accountName, scope);
-            } catch (Exception e) {
-                Log.d(TAG,"exception while getting idToken: " + e);
-            }
 
         } else {
             // User is already signed in. Therefore, display
@@ -223,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
                         "Successfully signed in. Welcome!",
                         Toast.LENGTH_LONG)
                         .show();
+
                 displayChatMessages();
             } else {
                 Toast.makeText(this,
@@ -265,5 +252,12 @@ public class MainActivity extends AppCompatActivity {
                     });
         }
         return true;
+    }
+
+    public String getAccountName()
+    {
+        return FirebaseAuth.getInstance()
+                .getCurrentUser()
+                .getDisplayName();
     }
 }
