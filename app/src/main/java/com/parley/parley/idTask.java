@@ -88,7 +88,12 @@ public class idTask extends AsyncTask<Void, Void, String>
         } catch (Exception e) {
             Log.d(TAG, "exception while getting idToken: " + e);
         }
-        String response = addNotificationKey(senderID, userEmail, registrationID, idToken);
+        String response = "";
+        try{
+            response = addNotificationKey(senderID, userEmail, registrationID, idToken);
+        } catch(Exception except) {
+            response = "Failed to retrieve ID";
+        }
         return response;
     }
     /**
