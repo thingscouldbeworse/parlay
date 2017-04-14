@@ -18,6 +18,7 @@ int array background 0x7f0b0000
 int array facebook_permissions 0x7f0b0001
 int array fontSizes 0x7f0b0002
 int array google_permissions 0x7f0b0003
+int array light 0x7f0b0004
 int attr actionBarDivider 0x7f01006a
 int attr actionBarItemBackground 0x7f01006b
 int attr actionBarPopupTheme 0x7f010064
@@ -924,7 +925,7 @@ int id item_touch_helper_previous_elevation 0x7f0d0005
 int id large 0x7f0d0053
 int id left 0x7f0d002b
 int id light 0x7f0d0047
-int id lightChooser 0x7f0d009c
+int id lightChooser 0x7f0d009b
 int id line1 0x7f0d00d9
 int id line3 0x7f0d00dd
 int id listMode 0x7f0d0014
@@ -972,7 +973,7 @@ int id radio 0x7f0d006f
 int id radioGroup 0x7f0d0097
 int id right 0x7f0d002c
 int id ringtone 0x7f0d009a
-int id ringtoneChooser 0x7f0d009b
+int id ringtoneChooser 0x7f0d009c
 int id screen 0x7f0d0030
 int id scroll 0x7f0d0020
 int id scrollIndicatorDown 0x7f0d0069

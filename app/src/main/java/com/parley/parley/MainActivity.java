@@ -2,19 +2,16 @@ package com.parley.parley;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.format.DateFormat;
-import android.text.format.DateUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -22,30 +19,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
-import org.json.JSONObject;
-
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import static android.content.DialogInterface.BUTTON_NEGATIVE;
-import static android.content.DialogInterface.BUTTON_POSITIVE;
-import static com.parley.parley.R.id.parent;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int SIGN_IN_REQUEST = 1;
+    private int currentYear;
+    Date date = new Date();
+    private static int j = 0;
     private FirebaseListAdapter<ChatMessage> adapter;
     private DatabaseReference parley = FirebaseDatabase.getInstance().getReference();
 
@@ -66,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
             // User is already signed in displays the welcome Toast
             Toast.makeText(this, "Welcome to Parley " + FirebaseAuth.getInstance()
                     .getCurrentUser().getDisplayName(), Toast.LENGTH_LONG).show();
+
+            //save current year
+            currentYear = date.getYear();
 
             // Load chat room contents
             displayChatMessages();
@@ -122,11 +115,11 @@ public class MainActivity extends AppCompatActivity {
                 menuBuild.setNegativeButton(R.string.sign_out_caps, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         AuthUI.getInstance().signOut(MainActivity.this).addOnCompleteListener(new
-                        OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(MainActivity.this, "You have signed out of Parley.",
-                            Toast.LENGTH_LONG).show();
+                                                                                                      OnCompleteListener<Void>() {
+                                                                                                          @Override
+                                                                                                          public void onComplete(@NonNull Task<Void> task) {
+                                                                                                              Toast.makeText(MainActivity.this, "You have signed out of Parley.",
+                                                                                                                      Toast.LENGTH_LONG).show();
                                                                                                           }
                                                                                                       });
                         finish();
@@ -163,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
 
     //displays the messages
     private void displayChatMessages() {
-        ListView chatMessages = (ListView)findViewById(R.id.chat_messages);
+        ListView chatMessages = (ListView) findViewById(R.id.chat_messages);
         //allows each individual message to be clicked
         chatMessages.setClickable(true);
 
@@ -187,10 +180,10 @@ public class MainActivity extends AppCompatActivity {
                 messUser.setText(model.getMessUser());
 
                 // Format the date before showing it
-                messTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
-                        model.getMessTime()));
-
-            }};
+                String timeString = dateString(model.getMessTime());
+                messTime.setText(timeString);
+            }
+        };
         chatMessages.setAdapter(adapter);
 
         //allow user to delete all messages on device and in Firebase database
@@ -202,10 +195,10 @@ public class MainActivity extends AppCompatActivity {
 
                 //Query the database to be able to retrieve the info from the selected message
                 //parley.addValueEventListener(new ValueEventListener(){
-                  //  @Override
-                  //  public void onDataChange(DataSnapshot data){
+                //  @Override
+                //  public void onDataChange(DataSnapshot data){
 
-  //                  }
+                //                  }
 //                })
                 String key = parley.getKey();
                 String empty = "";
@@ -225,8 +218,8 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(request, result, data);
 
         //Display welcome toast if succesful sign in and load the chat messages
-        if(request == SIGN_IN_REQUEST) {
-            if(result == RESULT_OK) {
+        if (request == SIGN_IN_REQUEST) {
+            if (result == RESULT_OK) {
                 Toast.makeText(this, "Successfully signed in. Welcome to Parley!",
                         Toast.LENGTH_LONG).show();
 
@@ -254,11 +247,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     //handle click events on menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.sign_out) {
+        if (item.getItemId() == R.id.sign_out) {
             AuthUI.getInstance().signOut(this)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -272,5 +264,39 @@ public class MainActivity extends AppCompatActivity {
                     });
         }
         return true;
+    }
+
+
+
+    public boolean isCurrentYear(int year) {
+        if (year == currentYear)
+            return true;
+        return false;
+    }
+
+    public String dateString(long messageDateLong) {
+        String day = null;
+        Date messageDate = new Date(messageDateLong);
+        int previousYear = messageDate.getYear();
+
+
+            if (!isCurrentYear(previousYear)) {
+                day = DateFormat.format("M/dd/yyyy h:mm a", messageDateLong).toString();
+            }
+
+            else {
+                day = DateFormat.format("M/dd h:mm a", messageDateLong).toString();
+            }
+
+
+
+
+
+
+
+        messageDate = date;
+
+
+        return day;
     }
 }
