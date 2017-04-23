@@ -13,6 +13,7 @@
         <item>Brown</item>
         <item>Black</item>
     </string-array>
+    <string name="save">SAVE</string>
     <string name="background_prompt">Choose Background Color</string>
     <string name="font_button">Customize Font</string>
     <string name="circle">Circle</string>
