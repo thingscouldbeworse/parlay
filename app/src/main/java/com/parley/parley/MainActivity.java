@@ -2,6 +2,7 @@ package com.parley.parley;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -165,6 +166,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
+                Settings setting = new Settings();
+                int textBubbleChoice;
+                textBubbleChoice = setting.getTextBubbleShape();
                 TextView messText = (TextView) v.findViewById(R.id.mess_text);
                 TextView messUser = (TextView) v.findViewById(R.id.mess_user);
                 TextView messTime = (TextView) v.findViewById(R.id.mess_time);
@@ -177,6 +181,32 @@ public class MainActivity extends AppCompatActivity {
 
                 // Set their text to the message
                 messText.setText(model.getMessText());
+
+                //Decide which text Bubble shape to show or to show none if no box is checked
+                SharedPreferences settings = getSharedPreferences("answers", MODE_PRIVATE);
+                boolean circleChecked = settings.getBoolean("circle",false);
+                boolean starChecked = settings.getBoolean("star",false);
+                boolean triangleChecked = settings.getBoolean("triangle",false);
+                boolean hexagonChecked = settings.getBoolean("hexagon",false);
+                boolean quoteChecked = settings.getBoolean("quote", false);
+
+                if (circleChecked) {
+                    messText.setBackgroundResource(R.drawable.circle9);
+                }
+                else if (starChecked) {
+                    messText.setBackgroundResource(R.drawable.star9);
+                }
+                else if (triangleChecked) {
+                    messText.setBackgroundResource(R.drawable.triangle9);
+                }
+                else if (hexagonChecked) {
+                    messText.setBackgroundResource(R.drawable.hexagon9);
+                }
+                else if (quoteChecked) {
+                    messText.setBackgroundResource(R.drawable.quote9);
+                }
+
+
                 messUser.setText(model.getMessUser());
 
                 // Format the date before showing it
@@ -184,6 +214,8 @@ public class MainActivity extends AppCompatActivity {
                 messTime.setText(timeString);
             }
         };
+
+
         chatMessages.setAdapter(adapter);
 
         //allow user to delete all messages on device and in Firebase database
