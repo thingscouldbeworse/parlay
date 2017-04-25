@@ -3,12 +3,15 @@ package com.parley.parley;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -190,6 +193,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean hexagonChecked = settings.getBoolean("hexagon",false);
                 boolean quoteChecked = settings.getBoolean("quote", false);
 
+                // Retrieve font info
+                Float fontSize = settings.getFloat("fontSize", 18);
+                Integer fontColorIndex = settings.getInt("colorIndex", 0);
+                int[] colorWheel = getApplicationContext().getResources().getIntArray(R.array.colorReferences);
+                int fontColor = colorWheel[fontColorIndex];
+                String fontStyle = settings.getString("fontStyle", "sans-serif");
+
+                // Change message view
                 if (circleChecked) {
                     messText.setBackgroundResource(R.drawable.circle9);
                 }
@@ -205,6 +216,9 @@ public class MainActivity extends AppCompatActivity {
                 else if (quoteChecked) {
                     messText.setBackgroundResource(R.drawable.quote9);
                 }
+                messText.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize);
+                messText.setTextColor(fontColor);
+                messText.setTypeface(Typeface.create(fontStyle, Typeface.NORMAL));
 
 
                 messUser.setText(model.getMessUser());

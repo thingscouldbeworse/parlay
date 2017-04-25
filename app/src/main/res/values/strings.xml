@@ -47,12 +47,35 @@
     <string-array name="fontSizes">
         <item>14</item>
         <item>16</item>
-        <item>18(default)</item>
+        <item>18</item>
         <item>20</item>
         <item>22</item>
         <item>24</item>
         <item>26</item>
         <item>28</item>
+    </string-array>
+    <array name="colorReferences">
+        <item>@android:color/black</item>
+        <item>@android:color/holo_red_light</item>
+        <item>@android:color/holo_orange_dark</item>
+        <item>@android:color/holo_green_light</item>
+        <item>@android:color/holo_blue_light</item>
+        <item>@android:color/holo_purple</item>
+    </array>
+    <string-array name="fontColors">
+        <item>black</item>
+        <item>red</item>
+        <item>orange</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>purple</item>
+    </string-array>
+    <string-array name="fontStyles">
+        <item>sans-serif</item>
+        <item>serif</item>
+        <item>casual</item>
+        <item>cursive</item>
+        <item>monospace</item>
     </string-array>
 
     <!-- Strings used by main_menu.xml -->
