@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int SIGN_IN_REQUEST = 1;
     private int currentYear;
     Date date = new Date();
-    private static int j = 0;
     private FirebaseListAdapter<ChatMessage> adapter;
     private DatabaseReference parley = FirebaseDatabase.getInstance().getReference();
 
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
     //displays the messages
     private void displayChatMessages() {
-        ListView chatMessages = (ListView) findViewById(R.id.chat_messages);
+        final ListView chatMessages = (ListView) findViewById(R.id.chat_messages);
         //allows each individual message to be clicked
         chatMessages.setClickable(true);
 
@@ -219,6 +219,11 @@ public class MainActivity extends AppCompatActivity {
                 messText.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize);
                 messText.setTextColor(fontColor);
                 messText.setTypeface(Typeface.create(fontStyle, Typeface.NORMAL));
+
+                String colorString = "#" + settings.getString("background_color", "FFFFFF");
+                if(colorString.length() != 7 || !colorString.startsWith("#"))
+                    colorString = "#FFFFFF";
+                chatMessages.setBackgroundColor(Color.parseColor(String.valueOf(colorString)));
 
 
                 messUser.setText(model.getMessUser());
