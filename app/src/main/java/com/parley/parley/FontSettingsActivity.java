@@ -29,7 +29,7 @@ public class FontSettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Pass values back to MainActivity
-                SharedPreferences settings = getSharedPreferences("answers", MODE_PRIVATE);
+                SharedPreferences settings = getSharedPreferences("prefs", MODE_PRIVATE);
                 SharedPreferences.Editor editor = settings.edit();
 
                 // Retrieve values from font spinners
@@ -43,6 +43,7 @@ public class FontSettingsActivity extends AppCompatActivity {
                 editor.putInt("colorIndex", fontColorIndex);
                 editor.putString("fontStyle", fontStyle);
                 editor.commit();
+                finish();
                 startActivity(new Intent(FontSettingsActivity.this, MainActivity.class));
             }
         });

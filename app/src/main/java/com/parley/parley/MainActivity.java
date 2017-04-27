@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int SIGN_IN_REQUEST = 1;
     private int currentYear;
     Date date = new Date();
-    private static int j = 0;
     private FirebaseListAdapter<ChatMessage> adapter;
     private DatabaseReference parley = FirebaseDatabase.getInstance().getReference();
 
@@ -54,14 +53,9 @@ public class MainActivity extends AppCompatActivity {
             // Start sign in/sign up activity
             startActivityForResult(
                     AuthUI.getInstance().createSignInIntentBuilder().build(),
-                    SIGN_IN_REQUEST
-            );
+                    SIGN_IN_REQUEST);
         } else {
-            // User is already signed in displays the welcome Toast
-            Toast.makeText(this, "Welcome to Parley " + FirebaseAuth.getInstance()
-                    .getCurrentUser().getDisplayName(), Toast.LENGTH_LONG).show();
-
-            //save current year
+                        //save current year
             currentYear = date.getYear();
 
             // Load chat room contents
@@ -80,9 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
                 // Read the input field and push a new instance
                 // of com.parley.parley.ChatMessage to the Firebase database
-                parley.child("messages").push().setValue(new ChatMessage(message.getText()
-                        .toString(), FirebaseAuth.getInstance().getCurrentUser().getDisplayName())
-                );
+
+               parley.child("messages").push().setValue(new ChatMessage(message.getText()
+                        .toString(), FirebaseAuth.getInstance().getCurrentUser().getDisplayName()));
+
 
                 // Clear the input
                 message.setText("");
@@ -96,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                finish();
                 startActivity(new Intent(MainActivity.this, Settings.class));
             }
         });
@@ -118,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
                 //creates the listener if the user presses the sign out button
                 menuBuild.setNegativeButton(R.string.sign_out_caps, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+
+
                         AuthUI.getInstance().signOut(MainActivity.this).addOnCompleteListener(new
                                                                                                       OnCompleteListener<Void>() {
                                                                                                           @Override
@@ -127,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                                                                                                           }
                                                                                                       });
                         finish();
+
                     }
                 });
 
@@ -163,15 +161,11 @@ public class MainActivity extends AppCompatActivity {
         ListView chatMessages = (ListView) findViewById(R.id.chat_messages);
         //allows each individual message to be clicked
         chatMessages.setClickable(true);
-
         adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
                 R.layout.message, parley.child("messages")) {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
-                Settings setting = new Settings();
-                int textBubbleChoice;
-                textBubbleChoice = setting.getTextBubbleShape();
                 TextView messText = (TextView) v.findViewById(R.id.mess_text);
                 TextView messUser = (TextView) v.findViewById(R.id.mess_user);
                 TextView messTime = (TextView) v.findViewById(R.id.mess_time);
@@ -186,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 messText.setText(model.getMessText());
 
                 //Decide which text Bubble shape to show or to show none if no box is checked
-                SharedPreferences settings = getSharedPreferences("answers", MODE_PRIVATE);
+                SharedPreferences settings = getSharedPreferences("prefs", MODE_PRIVATE);
                 boolean circleChecked = settings.getBoolean("circle",false);
                 boolean starChecked = settings.getBoolean("star",false);
                 boolean triangleChecked = settings.getBoolean("triangle",false);
@@ -200,22 +194,132 @@ public class MainActivity extends AppCompatActivity {
                 int fontColor = colorWheel[fontColorIndex];
                 String fontStyle = settings.getString("fontStyle", "sans-serif");
 
-                // Change message view
+                //Retrieve text Bubble color
+                Integer bubbleColorIndex = settings.getInt("bubbleColor", 6);
+
+                // Change message view based on text bubble shape and color chosen
                 if (circleChecked) {
-                    messText.setBackgroundResource(R.drawable.circle9);
+                    switch(bubbleColorIndex){
+                        case 0:
+                            messText.setBackgroundResource(R.drawable.circle9);
+                            break;
+                        case 1:
+                            messText.setBackgroundResource(R.drawable.circlered9);
+                            break;
+                        case 2:
+                            messText.setBackgroundResource(R.drawable.circleorange9);
+                            break;
+                        case 3:
+                            messText.setBackgroundResource(R.drawable.circlegreen9);
+                            break;
+                        case 4:
+                            messText.setBackgroundResource(R.drawable.circleblue9);
+                            break;
+                        case 5:
+                            messText.setBackgroundResource(R.drawable.circlepurple9);
+                            break;
+                        default:
+                            messText.setBackgroundResource(R.drawable.circleblack9);
+                    }
                 }
                 else if (starChecked) {
-                    messText.setBackgroundResource(R.drawable.star9);
+                    switch (bubbleColorIndex) {
+                        case 0:
+                            messText.setBackgroundResource(R.drawable.star9);
+                            break;
+                        case 1:
+                            messText.setBackgroundResource(R.drawable.starred9);
+                            break;
+                        case 2:
+                            messText.setBackgroundResource(R.drawable.starorange9);
+                            break;
+                        case 3:
+                            messText.setBackgroundResource(R.drawable.stargreen9);
+                            break;
+                        case 4:
+                            messText.setBackgroundResource(R.drawable.starblue9);
+                            break;
+                        case 5:
+                            messText.setBackgroundResource(R.drawable.starpurple9);
+                            break;
+                        default:
+                            messText.setBackgroundResource(R.drawable.starblack9);
+                    }
                 }
                 else if (triangleChecked) {
-                    messText.setBackgroundResource(R.drawable.triangle9);
+                    switch (bubbleColorIndex) {
+                        case 0:
+                            messText.setBackgroundResource(R.drawable.triangle9);
+                            break;
+                        case 1:
+                            messText.setBackgroundResource(R.drawable.trianglered9);
+                            break;
+                        case 2:
+                            messText.setBackgroundResource(R.drawable.triangleorange9);
+                            break;
+                        case 3:
+                            messText.setBackgroundResource(R.drawable.trianglegreen9);
+                            break;
+                        case 4:
+                            messText.setBackgroundResource(R.drawable.triangleblue9);
+                            break;
+                        case 5:
+                            messText.setBackgroundResource(R.drawable.trianglepurple9);
+                            break;
+                        default:
+                            messText.setBackgroundResource(R.drawable.triangleblack9);
+                    }
                 }
                 else if (hexagonChecked) {
-                    messText.setBackgroundResource(R.drawable.hexagon9);
+                    switch(bubbleColorIndex) {
+                        case 0:
+                            messText.setBackgroundResource(R.drawable.hexagon9);
+                            break;
+                        case 1:
+                            messText.setBackgroundResource(R.drawable.hexagonred9);
+                            break;
+                        case 2:
+                            messText.setBackgroundResource(R.drawable.hexagonorange9);
+                            break;
+                        case 3:
+                            messText.setBackgroundResource(R.drawable.hexagongreen9);
+                            break;
+                        case 4:
+                            messText.setBackgroundResource(R.drawable.hexagonblue9);
+                            break;
+                        case 5:
+                            messText.setBackgroundResource(R.drawable.hexagonpurple9);
+                            break;
+                        default:
+                            messText.setBackgroundResource(R.drawable.hexagonblack9);
+                    }
                 }
                 else if (quoteChecked) {
-                    messText.setBackgroundResource(R.drawable.quote9);
+                    switch(bubbleColorIndex) {
+                        case 0:
+                            messText.setBackgroundResource(R.drawable.quote9);
+                            break;
+                        case 1:
+                            messText.setBackgroundResource(R.drawable.quotered9);
+                            break;
+                        case 2:
+                            messText.setBackgroundResource(R.drawable.quoteorange9);
+                            break;
+                        case 3:
+                            messText.setBackgroundResource(R.drawable.quotegreen9);
+                            break;
+                        case 4:
+                            messText.setBackgroundResource(R.drawable.quoteblue9);
+                            break;
+                        case 5:
+                            messText.setBackgroundResource(R.drawable.quotepurple9);
+                            break;
+                        default:
+                            messText.setBackgroundResource(R.drawable.quoteblack9);
+                    }
                 }
+
+                //display view based on font ettings
                 messText.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize);
                 messText.setTextColor(fontColor);
                 messText.setTypeface(Typeface.create(fontStyle, Typeface.NORMAL));
@@ -232,25 +336,42 @@ public class MainActivity extends AppCompatActivity {
 
         chatMessages.setAdapter(adapter);
 
+
         //allow user to delete all messages on device and in Firebase database
         chatMessages.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position,
                                            long id) {
-                parley.removeValue();
 
-                //Query the database to be able to retrieve the info from the selected message
-                //parley.addValueEventListener(new ValueEventListener(){
-                //  @Override
-                //  public void onDataChange(DataSnapshot data){
+                //shows the delete options
+                final AlertDialog.Builder deleteBuild = new AlertDialog.Builder(MainActivity.this);
+                deleteBuild.setTitle("DELETE");
 
-                //                  }
-//                })
-                String key = parley.getKey();
-                String empty = "";
-                Map<String, Object> childUpdates = new HashMap<>();
-                //childUpdates.put(key);
-                //parley.updateChildren(childUpdates);
+                //creates the listener if the user presses the delete all button
+                deleteBuild.setNegativeButton(R.string.delete_all_caps, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        parley.removeValue();
+                        dialog.dismiss();
+                    }
+                });
+
+                //creates the listener if the user presses the delete this message button
+                //not currently implemented because hard to retrieve unique ID generated by push
+                deleteBuild.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+
+                //creates the listener if the user presses the cancel button
+                deleteBuild.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+
+                deleteBuild.create();
+                deleteBuild.show();
                 return true;
             }
         });
@@ -283,33 +404,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-    }
-
-    //to instantiate menu resource
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-
-    //handle click events on menu
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.sign_out) {
-            AuthUI.getInstance().signOut(this)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(MainActivity.this, "You have signed out of Parley.",
-                                    Toast.LENGTH_LONG).show();
-
-                            // Close activity
-                            finish();
-                        }
-                    });
-        }
-        return true;
     }
 
 
