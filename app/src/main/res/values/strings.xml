@@ -70,6 +70,15 @@
         <item>blue</item>
         <item>purple</item>
     </string-array>
+    <string-array name="bubbleColors">
+    <item>white</item>
+    <item>red</item>
+    <item>orange</item>
+    <item>green</item>
+    <item>blue</item>
+    <item>purple</item>
+    <item>black</item>
+    </string-array>
     <string-array name="fontStyles">
         <item>sans-serif</item>
         <item>serif</item>
@@ -85,10 +94,12 @@
     <!-- Strings used by activity_main.xml -->
     <string name="input">Input</string>
     <string name="settings_button">Settings Button</string>
+    <string name="choose_text_bubble_color">Choose Text Bubble Color</string>
 
     <!-- Strings used by MainActivity.java -->
     <string name="sign_out_caps">SIGN OUT</string>
     <string name="delete_all_caps">DELETE ALL</string>
     <string name="cancel">CANCEL</string>
+    <string name="delete">DELETE THIS MESSAGE</string>
 
     </resources>

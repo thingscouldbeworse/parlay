@@ -59,7 +59,7 @@ public class Settings extends AppCompatActivity {
         });
 
 
-        final SharedPreferences settings = getSharedPreferences("answers", MODE_PRIVATE);
+        final SharedPreferences settings = getSharedPreferences("prefs", MODE_PRIVATE);
 
         final EditText backgroundColor = (EditText) findViewById(R.id.background_color);
         backgroundColor.setText(settings.getString("background_color","FFFFFF"));
@@ -79,7 +79,11 @@ public class Settings extends AppCompatActivity {
                 editor.putBoolean("triangle",textBubbleTriangle.isChecked());
                 editor.putBoolean("star", textBubbleStar.isChecked());
                 editor.putString("background_color", backgroundColor.getText().toString());
+
+                Integer BubbleColorIndex = BubbleColorSpinner.getSelectedItemPosition();
+                editor.putInt("bubbleColor", BubbleColorIndex);
                 editor.commit();
+                finish();
 
                 startActivity(new Intent(Settings.this, MainActivity.class));
             }

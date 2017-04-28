@@ -43,6 +43,7 @@ public class FontSettingsActivity extends AppCompatActivity {
                 editor.putInt("colorIndex", fontColorIndex);
                 editor.putString("fontStyle", fontStyle);
                 editor.commit();
+                finish();
                 startActivity(new Intent(FontSettingsActivity.this, MainActivity.class));
             }
         });
