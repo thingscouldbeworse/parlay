@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
     //displays the messages
     private void displayChatMessages() {
-        ListView chatMessages = (ListView) findViewById(R.id.chat_messages);
+        final ListView chatMessages = (ListView) findViewById(R.id.chat_messages);
         //allows each individual message to be clicked
         chatMessages.setClickable(true);
 
@@ -200,6 +200,12 @@ public class MainActivity extends AppCompatActivity {
                 int fontColor = colorWheel[fontColorIndex];
                 String fontStyle = settings.getString("fontStyle", "sans-serif");
 
+                // Retrieve background info
+                Integer backgroundColorIdx = settings.getInt("backgroundColor", 0);
+                int[] backgroundColorWheel = getApplicationContext().getResources().getIntArray(R.array.backgroundReferences);
+                int backgroundColor = backgroundColorWheel[backgroundColorIdx];
+
+
                 // Change message view
                 if (circleChecked) {
                     messText.setBackgroundResource(R.drawable.circle9);
@@ -216,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (quoteChecked) {
                     messText.setBackgroundResource(R.drawable.quote9);
                 }
+                chatMessages.setBackgroundColor(backgroundColor);
                 messText.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize);
                 messText.setTextColor(fontColor);
                 messText.setTypeface(Typeface.create(fontStyle, Typeface.NORMAL));

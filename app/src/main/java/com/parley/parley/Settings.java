@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 public class Settings extends AppCompatActivity {
     private int textBubbleChoice;
@@ -39,7 +40,7 @@ public class Settings extends AppCompatActivity {
         final RadioButton textBubbleTriangle = (RadioButton) findViewById(R.id.triangle);
         final RadioButton textBubbleStar = (RadioButton) findViewById(R.id.star);
 
-
+        final Spinner backgroundColorSpinner = (Spinner) findViewById(R.id.background_color);
 
         Button save = (Button) findViewById(R.id.save);
 
@@ -53,6 +54,11 @@ public class Settings extends AppCompatActivity {
                 editor.putBoolean("quote",textBubbleQuote.isChecked());
                 editor.putBoolean("triangle",textBubbleTriangle.isChecked());
                 editor.putBoolean("star", textBubbleStar.isChecked());
+
+                Integer backgroundColorIndex = backgroundColorSpinner.getSelectedItemPosition();
+                editor.putInt("backgroundColor", backgroundColorIndex);
+
+
                 editor.commit();
                 startActivity(new Intent(Settings.this, MainActivity.class));
             }
