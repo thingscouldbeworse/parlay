@@ -2,17 +2,6 @@
     <string name="app_name">Parley</string>
 
     <!-- Strings used by activity_settings.xml -->
-    <string-array name="background">
-        <item>White (default)</item>
-        <item>Blue</item>
-        <item>Green</item>
-        <item>Yellow</item>
-        <item>Orange</item>
-        <item>Purple</item>
-        <item>Red</item>
-        <item>Brown</item>
-        <item>Black</item>
-    </string-array>
     <string name="save">SAVE</string>
     <string name="background_prompt">Choose Background Color</string>
     <string name="font_button">Customize Font</string>
@@ -86,6 +75,23 @@
         <item>cursive</item>
         <item>monospace</item>
     </string-array>
+    <string-array name="background">
+        <item>white</item>
+        <item>red</item>
+        <item>orange</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>purple</item>
+    </string-array>
+    <array name="backgroundReferences">
+        <item>@android:color/white</item>
+        <item>@android:color/holo_red_light</item>
+        <item>@android:color/holo_orange_dark</item>
+        <item>@android:color/holo_green_light</item>
+        <item>@android:color/holo_blue_light</item>
+        <item>@android:color/holo_purple</item>
+    </array>
+
 
     <!-- Strings used by main_menu.xml -->
     <string name="sign_out">Sign out</string>

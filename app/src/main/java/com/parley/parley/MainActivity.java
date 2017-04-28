@@ -194,6 +194,11 @@ public class MainActivity extends AppCompatActivity {
                 int fontColor = colorWheel[fontColorIndex];
                 String fontStyle = settings.getString("fontStyle", "sans-serif");
 
+                // Retrieve background info
+                Integer backgroundColorIdx = settings.getInt("backgroundColor", 0);
+                int[] backgroundColorWheel = getApplicationContext().getResources().getIntArray(R.array.backgroundReferences);
+                int backgroundColor = backgroundColorWheel[backgroundColorIdx];
+
                 //Retrieve text Bubble color
                 Integer bubbleColorIndex = settings.getInt("bubbleColor", 6);
 
@@ -318,7 +323,8 @@ public class MainActivity extends AppCompatActivity {
                             messText.setBackgroundResource(R.drawable.quoteblack9);
                     }
                 }
-
+              
+                chatMessages.setBackgroundColor(backgroundColor);
 
                 messText.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize);
                 messText.setTextColor(fontColor);
