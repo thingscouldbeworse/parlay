@@ -61,9 +61,6 @@ public class Settings extends AppCompatActivity {
 
         final SharedPreferences settings = getSharedPreferences("prefs", MODE_PRIVATE);
 
-        final EditText backgroundColor = (EditText) findViewById(R.id.background_color);
-        backgroundColor.setText(settings.getString("background_color","FFFFFF"));
-
         final Spinner backgroundColorSpinner = (Spinner) findViewById(R.id.background_color);
 
         Button save = (Button) findViewById(R.id.save);
@@ -81,9 +78,6 @@ public class Settings extends AppCompatActivity {
 
                 Integer backgroundColorIndex = backgroundColorSpinner.getSelectedItemPosition();
                 editor.putInt("backgroundColor", backgroundColorIndex);
-
-
-                editor.putString("background_color", backgroundColor.getText().toString());
 
                 Integer BubbleColorIndex = BubbleColorSpinner.getSelectedItemPosition();
                 editor.putInt("bubbleColor", BubbleColorIndex);

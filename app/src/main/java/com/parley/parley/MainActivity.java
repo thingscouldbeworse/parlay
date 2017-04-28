@@ -330,10 +330,10 @@ public class MainActivity extends AppCompatActivity {
                 messText.setTextColor(fontColor);
                 messText.setTypeface(Typeface.create(fontStyle, Typeface.NORMAL));
 
-                String colorString = "#" + settings.getString("background_color", "FFFFFF");
+                /*String colorString = "#" + settings.getString("background_color", "FFFFFF");
                 if(colorString.length() != 7 || !colorString.startsWith("#"))
                     colorString = "#FFFFFF";
-                chatMessages.setBackgroundColor(Color.parseColor(String.valueOf(colorString)));
+                chatMessages.setBackgroundColor(Color.parseColor(String.valueOf(colorString))); */
 
 
                 messUser.setText(model.getMessUser());
