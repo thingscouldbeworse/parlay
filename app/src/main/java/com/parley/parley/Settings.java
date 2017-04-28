@@ -36,6 +36,9 @@ public class Settings extends AppCompatActivity {
         final RadioButton textBubbleStar = (RadioButton) findViewById(R.id.star);
         final Spinner BubbleColorSpinner = (Spinner) findViewById(R.id.spinner);
 
+
+        final Spinner backgroundColorSpinner = (Spinner) findViewById(R.id.background_color);
+
         fontCustomize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +54,10 @@ public class Settings extends AppCompatActivity {
                 //retrieve text bubble color choice
                 Integer BubbleColorIndex = BubbleColorSpinner.getSelectedItemPosition();
                 editor.putInt("bubbleColor", BubbleColorIndex);
+
+                Integer backgroundColorIndex = backgroundColorSpinner.getSelectedItemPosition();
+                editor.putInt("backgroundColor", backgroundColorIndex);
+
                 editor.commit();
                 finish();
 
@@ -61,7 +68,6 @@ public class Settings extends AppCompatActivity {
 
         final SharedPreferences settings = getSharedPreferences("prefs", MODE_PRIVATE);
 
-        final Spinner backgroundColorSpinner = (Spinner) findViewById(R.id.background_color);
 
         Button save = (Button) findViewById(R.id.save);
 
