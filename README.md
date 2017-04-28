@@ -3,10 +3,12 @@ Parley REDAME
 
 Introduction:
 
-This is a README file for the program Parley. Parley is a messaging app on Android system. It based on the java language, and based on the github and Android Studio.
+This is a README file for the program Parley. Parley is a messaging app on Android system. It is written in xml and java languages. The systems used to create this app include github and Android Studio.
 
 
-Included:
+
+
+Files Included:
 
 A folder named ".idea" with several files in. In below is the list of these files:
 
@@ -86,16 +88,24 @@ this README file
 
 Project Parley:
 
-Our goal for our Parley project is buliding a convenient customizable messaging-chatting appliacation. It has the function of a group chatting; the function of voice messaging; the functions of customming your font, background color, textbubble colors and shapes of your chatting windows; the functions of saving, deleting and checking your chatting message history; and the functions of creating a new account or using your google account to log in.
+Our goal for our Parley project is buliding a convenient customizable chatting application. It has the following functions:
+	sending messages within the chat
+	customizing your font, background color, textbubble colors and shapes of your chatting windows
+	ability to delte all chat messages from the database, thus deleting them from every device
+	ability to create a new account using an email
+	using your email account and password to log in
+	ability to sign out 
 
-The main folder is the most important folder for this project. It contains almost everything the most main functions of this project. Messaging, Font-Setting, Time-Setting, Textbubble setting, background color setting, the other setting for the main system and so on.
+The main folder is the most important folder for this project. It contains the java classes that implement the functions of this project. 
 
-For ChatMessage.java, which is used to control the functions of text message, user and text time and contains a public class ChatMessage. 
+Other important folders are included within the res folder. These include the drawable folder, the layout folder, and the values folder. The drawable folder contains all of the png and 9.png image files used throughout the app. The layout folder contains the xml files that determine the appearance of the front end. The activity_main.xml file has the layout code for the main chat activity. The message.xml file has the layout code to be placed within the listview to display the message, the message sender, and the date. The activity_settings.xml file determines the layout of the Settings page and the activity_font_setting.xml file determines the layout of the Font Settings page.
 
-For the Settings.java, it controls the textbubble's shape and color. 
+ChatMessage.java is used to save the message, the message sender, and the message time. 
 
-For idTask.java, it controls the user Account information system. All the functions as creating an new ID, setting a password, checking the ID statues and so on. 
+Settings.java is used to save the background color choice, the text bubble shape choice, and the text bubble color choice. It saves these changes upon clicking the save button or the font customize button.
 
-For FontSettingsActivity.java, it controls the font of all the texts, as if a user want to change the font of the size of text.
+FontSettingsActivity.java saves the font style, color, and size. These changes are saved upon clicking the save button.
 
-All of these four java files are related to the MainActivity.java. The MainActivity.java controls almost every main activity of the Parley system. It could be seen as the main java file in the whole project.
+All of these four java files are related to the MainActivity.java. The MainActivity.java controls the chat interface of the Parley system. It retrieves the values saved from Settings.java and FontSettingsActvity.java and updates the chat interface according to the user choices. It also handles signing the user in and out.
+
+The code in idTask.java was added to try and fetch the individual tokens to allow individual messaging. Although the code compiles it is not currently impleented.
