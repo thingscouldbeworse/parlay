@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                 messText.setText(model.getMessText());
 
                 //Decide which text Bubble shape to show or to show none if no box is checked
-                SharedPreferences settings = getSharedPreferences("answers", MODE_PRIVATE);
+                SharedPreferences settings = getSharedPreferences("prefs", MODE_PRIVATE);
                 boolean circleChecked = settings.getBoolean("circle",false);
                 boolean starChecked = settings.getBoolean("star",false);
                 boolean triangleChecked = settings.getBoolean("triangle",false);
