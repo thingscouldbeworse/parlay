@@ -34,6 +34,7 @@ public class Settings extends AppCompatActivity {
         final RadioButton textBubbleQuote = (RadioButton) findViewById(R.id.quote_bubble);
         final RadioButton textBubbleTriangle = (RadioButton) findViewById(R.id.triangle);
         final RadioButton textBubbleStar = (RadioButton) findViewById(R.id.star);
+        final Spinner BubbleColorSpinner = (Spinner) findViewById(R.id.spinner);
 
         fontCustomize.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +47,12 @@ public class Settings extends AppCompatActivity {
                 editor.putBoolean("quote",textBubbleQuote.isChecked());
                 editor.putBoolean("triangle",textBubbleTriangle.isChecked());
                 editor.putBoolean("star", textBubbleStar.isChecked());
+
+                //retrieve text bubble color choice
+                Integer BubbleColorIndex = BubbleColorSpinner.getSelectedItemPosition();
+                editor.putInt("bubbleColor", BubbleColorIndex);
+                editor.commit();
+                finish();
 
                 startActivity(new Intent(Settings.this, FontSettingsActivity.class));
             }
