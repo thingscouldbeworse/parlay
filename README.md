@@ -84,9 +84,18 @@ settings.gradle
 this README file
 
 
-
 Project Parley:
 
-Our goal for our Parley project is buliding a convenient customizable messaging-chatting appliacation. It has the function like individual chatting and group chatting; the functions of customming your font, background, textbubble colors and shapes of a chatting windows; the functions of saving and checking your chatting history; and the functions of creating a new account or using your google account to log in.
+Our goal for our Parley project is buliding a convenient customizable messaging-chatting appliacation. It has the function of a group chatting; the function of voice messaging; the functions of customming your font, background color, textbubble colors and shapes of your chatting windows; the functions of saving, deleting and checking your chatting message history; and the functions of creating a new account or using your google account to log in.
 
-The main folder seems the most main folder for this project. The main folder contains almost everything the most main functions of this project. Messaging, Font-Setting, Time-Setting, Textbubble setting, background color setting, the other setting for the main system and so on.The build folder contains something of the setting of Font, Textbubble setting like changing to different shapes and colors, and the account setting of google account and so on. 
+The main folder is the most important folder for this project. It contains almost everything the most main functions of this project. Messaging, Font-Setting, Time-Setting, Textbubble setting, background color setting, the other setting for the main system and so on.
+
+For ChatMessage.java, which is used to control the functions of text message, user and text time and contains a public class ChatMessage. 
+
+For the Settings.java, it controls the textbubble's shape and color. 
+
+For idTask.java, it controls the user Account information system. All the functions as creating an new ID, setting a password, checking the ID statues and so on. 
+
+For FontSettingsActivity.java, it controls the font of all the texts, as if a user want to change the font of the size of text.
+
+All of these four java files are related to the MainActivity.java. The MainActivity.java controls almost every main activity of the Parley system. It could be seen as the main java file in the whole project.
